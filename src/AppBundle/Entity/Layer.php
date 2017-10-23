@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -20,6 +21,7 @@ class Layer
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Groups({"api"})
      */
     private $id;
 
@@ -28,6 +30,7 @@ class Layer
      *
      * @ORM\Column(name="name", type="string", length=100)
      * @Assert\NotBlank()
+     * @Groups({"api"})
      */
     private $name;
 
@@ -35,6 +38,7 @@ class Layer
      * @var int
      *
      * @ORM\Column(name="rank", type="integer")
+     * @Groups({"api"})
      */
     private $rank;
 
@@ -43,6 +47,7 @@ class Layer
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="Geo", mappedBy="layer")
+     * @Groups({"api"})
      */
     private $geos;
 
@@ -98,6 +103,11 @@ class Layer
     public function getGeos()
     {
         return $this->geos;
+    }
+
+    public function __toString()
+    {
+        return "Layer [id: $this->id, name: $this->name, rank: $this->rank]";
     }
 
 }

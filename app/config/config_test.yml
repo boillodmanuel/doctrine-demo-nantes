@@ -15,3 +15,12 @@ web_profiler:
 swiftmailer:
     disable_delivery: true
 
+doctrine:
+    dbal:
+        driver: pdo_pgsql
+        host: localhost
+        port: 5432
+        dbname: doctrine-demo-nantes-test
+        user: postgres
+        password: DemoNantes44
+        charset: UTF8

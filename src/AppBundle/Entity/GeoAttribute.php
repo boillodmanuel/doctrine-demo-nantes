@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Geo's attribute
@@ -18,6 +19,7 @@ class GeoAttribute
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Groups({"api"})
      */
     private $id;
 
@@ -25,6 +27,7 @@ class GeoAttribute
      * @var string
      *
      * @ORM\Column(type="text")
+     * @Groups({"api"})
      */
     private $name;
 
@@ -32,6 +35,7 @@ class GeoAttribute
      * @var string
      *
      * @ORM\Column(type="text")
+     * @Groups({"api"})
      */
     private $value;
 
@@ -89,4 +93,10 @@ class GeoAttribute
     {
         return $this->geo;
     }
+
+    public function __toString()
+    {
+        return "GeoAttribute [id: $this->id, name: $this->name, value: $this->value]";
+    }
+
 }

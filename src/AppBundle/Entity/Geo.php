@@ -2,8 +2,9 @@
 
 namespace AppBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * Geo
@@ -19,6 +20,7 @@ class Geo
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Groups({"api"})
      */
     private $id;
 
@@ -26,13 +28,15 @@ class Geo
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=100)
+     * @Groups({"api"})
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="geom", type="string")
+     * @ORM\Column(name="geometry", type="string")
+     * @Groups({"api"})
      */
     private $geometry;
 
@@ -48,6 +52,7 @@ class Geo
      * @var ArrayCollection
      *
      * @ORM\OneToMany(targetEntity="GeoAttribute", mappedBy="geo")
+     * @Groups({"api"})
      */
     private $geoAttributes;
 
@@ -117,4 +122,10 @@ class Geo
     {
         return $this->geoAttributes;
     }
+
+    public function __toString()
+    {
+        return "Geo [id: $this->id, name: $this->name, geometry: $this->geometry]";
+    }
+
 }
