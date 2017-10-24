@@ -4,6 +4,7 @@ namespace Tests\AppBundle\Doctrine;
 
 use AppBundle\Entity\Layer;
 
+// TODO test instruction: don't forget to undo mapping of previous test (when modified manually during the demo)
 class Doctrine_B2_Dql_Test extends AbstractDoctrineTestCase
 {
 
@@ -15,7 +16,6 @@ class Doctrine_B2_Dql_Test extends AbstractDoctrineTestCase
 
     public function test_lazyloading_dql()
     {
-        // TODO don't forget to undo mapping of previous test (when modified manually during the demo)
 
         $dql = 'select l
                 from AppBundle:Layer l

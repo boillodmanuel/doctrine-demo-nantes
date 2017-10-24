@@ -41,7 +41,7 @@ class Doctrine_A2_Serialization_Test extends AbstractDoctrineTestCase
         $this->assertNotNull($layer);
         $this->assertEquals('Ecole', $layer->getName());
 
-        $this->logger->debug('layer as json: ' .
+        print("layer as json: \n" .
             $this->serializer->serialize($layer, 'json', ['groups' => ['api']]));
 
     }
