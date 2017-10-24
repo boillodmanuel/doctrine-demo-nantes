@@ -66,9 +66,6 @@ class DoctrineB4DtoHydrator extends AbstractHydrator
             ));
         }
 
-
-        print_r($result);
-
         return $result;
     }
 }
