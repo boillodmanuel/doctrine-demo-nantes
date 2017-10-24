@@ -3,6 +3,11 @@ doctrine-demo-nantes
 
 Demo project to explain how Doctrine works (query, lazy-loading, cache, ...).
 
+## The slides
+
+Slides of the talk:
+https://docs.google.com/a/wexity.fr/presentation/d/1Q263hmhILuybfjeAKPAG-BeTeiwk-jM_6sQvWYlbaAY/edit?usp=sharing
+
 ## Run the tests
 
 ### Install database
